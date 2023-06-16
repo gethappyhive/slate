@@ -36,8 +36,8 @@ export const wrapNodes: NodeTransforms['wrapNodes'] = (
       const rangeRef = Editor.rangeRef(editor, at, {
         affinity: 'inward',
       })
-      Transforms.splitNodes(editor, { at: end, match, voids })
-      Transforms.splitNodes(editor, { at: start, match, voids })
+      Transforms.splitNodes(editor, { at: end, match, voids, always: true })
+      Transforms.splitNodes(editor, { at: start, match, voids, always: true })
       at = rangeRef.unref()!
 
       if (options.at == null) {
